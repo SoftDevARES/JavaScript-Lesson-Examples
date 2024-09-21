@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var mat = prompt("Matematik Notunu Gir");//Haftada 4 saat
+        var turk = prompt("Türkçe Notunu Gir");//Haftada 4 saat
+        var tar = prompt("Tarih Notunu Gir");//Haftada 2 saat
+        var ing = prompt("İngilizce Notunu Gir");//Haftada 3 saat
+
+        var ort = ((mat * 4) + (turk * 4) + (tar * 2) + (ing * 3)) / 13;
+
+        // Ortalama değeri virgülden sonra 2 basamak gösterilecek şekilde düzenleniyor
+        ort = ort.toFixed(2);
+
+        if (ort >= 50) {
+            alert("Geçtiniz. Ortalama: " + ort);
+        } else {
+            alert("Kaldınız. Ortalama: " + ort);
+        }
+    </script>
+</body>
+
+</html>
