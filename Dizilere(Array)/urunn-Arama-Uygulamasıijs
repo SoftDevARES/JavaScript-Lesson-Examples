@@ -1,0 +1,41 @@
+let urun1 = {
+    isim: "Monster Laptop",
+    kategori: "Teknoloji",
+    fiyat: 40.000
+}
+
+let urun2 = {
+    isim: "Casper Laptop",
+    kategori: "Teknoloji",
+    fiyat: 27.900
+}
+
+let urun3 = {
+    isim: "Acer Laptop",
+    kategori: "Teknoloji",
+    fiyat: 37.500
+}
+
+let urunler = [urun1, urun2, urun3];
+let filtrliurunler = [];
+let kullaniciurunismi = prompt("Bir ürün ismi giriniz");
+
+filtrliurunleridoldur(urunler);
+filtrliurunleriyazdir(filtrliurunler);
+
+
+function filtrliurunleridoldur(urunler) {
+    urunler.forEach(function (urun) {
+        if (urun.isim.toUpperCase().includes(kullaniciurunismi.toUpperCase(), 0)) { // buranın anlamı : benim ürünüm içeriyormu kullanıcın giröiş olduğu ürün ismini
+            filtrliurunler.push(urun); //push : filtrliurunler metoduna ekliyoruz
+        }
+    });
+}
+
+function filtrliurunleriyazdir(urunler) {
+    urunler.forEach(function (urun) {
+        document.write("---------------------------------------");
+        document.write("|" + urun.isim + "|" + urun.fiyat + "|" + urun.kategori);
+        document.write("---------------------------------------");
+    });
+}
