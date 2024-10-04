@@ -38,4 +38,4 @@ function filtrliurunleriyazdir(urunler) {
         document.write("|" + urun.isim + "|" + urun.fiyat + "|" + urun.kategori);
         document.write("---------------------------------------");
     });
-}
+}   
