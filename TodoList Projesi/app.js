@@ -13,6 +13,7 @@ runEvents();
 function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded);
+    secondcordbody.addEventListener("click", removeTodoUI);
 }
 
 function pageLoaded() {
@@ -20,6 +21,14 @@ function pageLoaded() {
     todos.forEach(function(todo) {
         addTodoToUI(todo);
     });
+}
+
+function removeTodoUI(e){
+    if(e.target.className === "fa fa-remove"){
+        const todo = e.target.parentElement.parentElement;
+        todo.remove();
+        showAlert("success", "Todo başarıyla silindi.");
+    }
 }
 
 function addTodo(e) {
