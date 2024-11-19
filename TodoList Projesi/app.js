@@ -12,35 +12,20 @@ runEvents();
 
 function runEvents() {
     form.addEventListener("submit", addTodo);
-<<<<<<< HEAD
-=======
     document.addEventListener("DOMContentLoaded", pageLoaded);
 }
 
-function pageLoaded(){
+function pageLoaded() {
     checkFormTodosStorage();
-    todos.forEach(function(todo){
+    todos.forEach(function(todo) {
         addTodoToUI(todo);
     });
->>>>>>> 7278a1c (Initial commit)
 }
 
 function addTodo(e) {
     const inputText = addinput.value.trim();
     if (inputText === "") {
-<<<<<<< HEAD
-        alert("Bir değer giriniz");
-    } else {
-        // arayüze ekleme
-        addTodoarayüz(inputText);
-        addTodoSorage(inputText);
-    }
-    e.preventDefault(); // inputText parametresi olmamalı
-}
-
-function addTodoarayüz(newtodo) {
-=======
-        showAlert("warning", "Lütfen Boş Brakmayınız");
+        showAlert("warning", "Lütfen Boş Bırakmayınız");
     } else {
         // arayüze ekleme
         addTodoToUI(inputText);
@@ -51,7 +36,6 @@ function addTodoarayüz(newtodo) {
 }
 
 function addTodoToUI(newtodo) {
->>>>>>> 7278a1c (Initial commit)
     // <li class="list-group-item d-flex justify-content-between">Todo 1
     //                         <a href="#" class="delete-item">
     //                             <i class="fa fa-remove"></i>
@@ -89,17 +73,16 @@ function checkFormTodosStorage() {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
 }
-<<<<<<< HEAD
-=======
 
-function showAlert(type,message){
+function showAlert(type, message) {
     /*
-    <div class="alert alert-warning" rolse="alert">
-    Todo lİST Eklendi
-    >/div> */
+    <div class="alert alert-warning" role="alert">
+    Todo List Eklendi
+    </div>
+    */
 
     const div = document.createElement("div");
-    div.className="alert alert-"+type;
+    div.className = "alert alert-" + type;
     div.textContent = message;
     firstcordbody.appendChild(div);
 
@@ -107,4 +90,3 @@ function showAlert(type,message){
         div.remove();
     }, 2500);
 }
->>>>>>> 7278a1c (Initial commit)
