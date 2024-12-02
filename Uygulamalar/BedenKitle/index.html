@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <input type="range" min="20" oninput="calc" max="200" value="20" id="kilo">
+            <span id="weVal">20 Kg</span>
+        </div>
+        <div class="row">
+            <input type="range" min="100" oninput="calc" max="200" value="150" id="boy">
+            <span id="heVal">100 cm</span>
+        </div>
+        <p id="result">20.0</p>
+        <p id="category">Normal</p>
+    </div>
+</body>
+</html>
