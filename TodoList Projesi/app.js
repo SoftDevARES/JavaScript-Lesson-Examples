@@ -14,6 +14,7 @@ function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded);
     secondcordbody.addEventListener("click", removeTodoUI);
+    clearbutton.addEventListener("click",allTodosEverywhere);
 }
 
 function pageLoaded() {
@@ -21,6 +22,20 @@ function pageLoaded() {
     todos.forEach(function(todo) {
         addTodoToUI(todo);
     });
+}
+
+function allTodosEverywhere(){
+    const todolistesi = document.querySelectorAll(".list-group-item");
+    if(todolistesi.length> 0 ){
+        todolistesi.forEach(function(todo){
+            todo.remove();
+        });
+        todos=[];
+        localStorage.setItem("todos",JSON.stringify(todos));
+        showAlert("success", "Başaarılı");
+    }else{
+        showAlert("warning", "Silmek İçin Todo Olmalı");
+    }
 }
 
 function removeTodoUI(e){
