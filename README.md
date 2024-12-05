@@ -15,6 +15,6 @@ Bu repository, JavaScript öğrenme sürecimde derslerde geliştirdiğim mini pr
 -------------------
 <h2>Todo List Sayfası</h2> 
 
-<a href = "https://github.com/furkanturkerr/JavaScript-Lesson-Examples/tree/main/TodoList%20Projesi">Beden Kitle Endeksi </a>
+<a href = "https://github.com/furkanturkerr/JavaScript-Lesson-Examples/tree/main/TodoList%20Projesi">Todo List Sayfası</a>
 
 ![image](https://github.com/user-attachments/assets/c6c35883-b7b4-43e3-949b-cdd682324cde)
