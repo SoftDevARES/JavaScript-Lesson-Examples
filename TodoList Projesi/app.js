@@ -5,6 +5,7 @@ const todolist = document.querySelector(".list-group");
 const firstcordbody = document.querySelectorAll(".card-body")[0];
 const secondcordbody = document.querySelectorAll(".card-body")[1];
 const clearbutton = document.querySelector("#clearButton");
+const filterInput = document.querySelector("#todoSearch")
 
 let todos = [];
 
@@ -15,6 +16,7 @@ function runEvents() {
     document.addEventListener("DOMContentLoaded", pageLoaded);
     secondcordbody.addEventListener("click", removeTodoUI);
     clearbutton.addEventListener("click",allTodosEverywhere);
+    filterInput.addEventListener("keyup",filter);
 }
 
 function pageLoaded() {
@@ -22,6 +24,22 @@ function pageLoaded() {
     todos.forEach(function(todo) {
         addTodoToUI(todo);
     });
+}
+
+function filter(e){
+    const filterValue = e.target.value.toLowerCase().trim();
+    const todoListesi = document.querySelectorAll(".list-group-item");
+    if(todoListesi.length>0){
+        todoListesi.forEach(function(todo){
+            if(todo.textContent.toLowerCase().trim().includes(filterValue)){
+                todo.setAttribute("style","display : block");
+            }else{
+                todo.setAttribute("style","display : none !important");
+            }
+        });
+    }else{
+        showAlert("warning", "Todo Yok"); 
+    }
 }
 
 function allTodosEverywhere(){
